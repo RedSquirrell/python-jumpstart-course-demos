@@ -18,11 +18,11 @@ def show_header():
 
 def game_loop():
     creatures = [
-        actors.Creature("Toad", 1),
+        actors.SmallAnimal("Toad", 1),
         actors.Creature("Tiger", 12),
-        actors.Creature("Bat", 3),
-        actors.Creature("Dragon", 50),
-        actors.Creature("Evil Wizard", 1000)
+        actors.SmallAnimal("Bat", 3),
+        actors.Dragon("Dragon", 50, 75, True),
+        actors.Wizard("Evil Wizard", 1000)
     ]
 
     hero = actors.Wizard("Gandolf", 75)
@@ -51,6 +51,13 @@ def game_loop():
             print("OK, Exiting the game....")
             break
 
+        if not creatures:
+            print("You've defeated all the creatures!!!")
+            break
+
 
 if __name__ == '__main__':
     main()
+
+
+
